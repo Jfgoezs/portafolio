@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
+import app3 from '../../assets/img/app3.png';
 
 const Projects = () => {
   // Datos de ejemplo - reemplaza con tus proyectos
@@ -25,12 +26,12 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Clon de Spotify",
-      description: "Réplica de Spotify con reproductor funcional, listas de reproducción y búsqueda.",
-      stack: ["React", "Spotify API", "Styled Components"],
-      projectLink: "https://tu-proyecto.vercel.app",
-      codeLink: "https://github.com/tuusuario/tu-proyecto",
-      image: "https://via.placeholder.com/400x250"
+      title: "Finanzas Mini",
+      description: "Dashboard completo de finanzas personales con CRUD de transacciones, gráficos interactivos y análisis de gastos. Control total de ingresos y egresos con interfaz moderna.",
+      stack: ["Next.js 14", "PostgreSQL", "Tailwind CSS", "Prisma", "Chart.js", "Framer Motion", "Ant Design"],
+      projectLink: "https://finanzas-i5ji.vercel.app/", 
+      codeLink: "https://github.com/Jfgoezs/finanzas",
+      image: app3
     }
   ];
 
@@ -58,7 +59,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects section">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,8 +68,8 @@ const Projects = () => {
         >
           Proyectos
         </motion.h2>
-        
-        <motion.div 
+
+        <motion.div
           className="projects-grid"
           variants={containerVariants}
           initial="hidden"
@@ -76,8 +77,8 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           {projects.map(project => (
-            <motion.div 
-              key={project.id} 
+            <motion.div
+              key={project.id}
               className="project-card"
               variants={itemVariants}
               whileHover={{ y: -10 }}
@@ -95,11 +96,11 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                
+
                 <div className="project-stack">
                   {project.stack.map((tech, index) => (
                     <span key={index} className="stack-tag">{tech}</span>
