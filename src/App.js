@@ -1,41 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Hero from './components/Hero/Hero';
-import Projects from './components/Projects/Projects';
-import Skills from './components/Skills/Skills';
-import Contact from './components/Contact/Contact';
+import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import './i18n'; // Importa la configuración de i18n
 import './App.css';
+import Hero from './components/Hero/Hero';
+import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
+import ThemeToggle from './components/ThemeToggle';
+import LanguageToggle from './components/LanguageToggle';
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    // Comprobar preferencia del sistema
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-      setTheme('dark');
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
-
   return (
-    <div className="App">
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {theme === 'light' ? '🌙' : '☀️'}
-      </button>
-      
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <ThemeToggle />
+        <LanguageToggle />
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
+    </ThemeProvider>
   );
 }
 

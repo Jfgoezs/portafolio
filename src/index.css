@@ -1,3 +1,4 @@
+/* index.css */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-primary); /* Cambiado de #333 a variable */
+  background-color: var(--bg-primary);
 }
 
 html {
@@ -32,7 +34,7 @@ html {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #2d2d2d;
+  color: var(--heading-color); /* Cambiado de #2d2d2d a variable */
 }
 
 /* Variables CSS para modo claro/oscuro */
@@ -41,6 +43,7 @@ html {
   --bg-secondary: #f8f8f8;
   --text-primary: #2d2d2d;
   --text-secondary: #666;
+  --heading-color: #000000; /* Nueva variable para títulos en light mode */
   --accent: #6366f1;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -50,6 +53,7 @@ html {
   --bg-secondary: #2d2d2d;
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
+  --heading-color: #ffffff; /* Títulos blancos en dark mode */
   --accent: #818cf8;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }

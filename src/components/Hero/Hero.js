@@ -1,16 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Hero.css';
 import miFoto from '../../assets/img/yo.jpg';
 import cv from '../../assets/CvFelipeGoez.pdf';
 
 const Hero = () => {
+  const { t } = useTranslation();
+  
   const userData = {
-    name: "Felipe Goez",
-    role: "Desarrollador Frontend",
-    bio: "Soy un desarrollador junior con experiencia creando aplicaciones modernas y escalables usando React en el frontend y Node.js en el backend. Me apasiona transformar ideas en productos funcionales, con interfaces intuitivas y arquitecturas sólidas. Disfruto resolver problemas complejos y aprender nuevas tecnologías que potencien la experiencia del usuario.",
+    name: t('hero.name'),
+    role: t('hero.role'),
+    bio: t('hero.bio'),
+    funFact: t('hero.funFact'),
     technologies: ["React", "JavaScript", "CSS", "Node.js", "Next.js", "Tailwind CSS", "Git", "Figma", "SQL", "MongoDB", "Express.js", "Python", "Django"],
-    funFact: "El código es mi trabajo, pero lo que me inspira son las partidas de ajedrez, los giros de la F1, la pasión del fútbol, las historias en manwhas y la compañía de mis gatos",
     avatar: miFoto,
     cvLink: cv
   };
@@ -56,7 +59,7 @@ const Hero = () => {
 
           {/* Div3: Tecnologías */}
           <motion.div className="bento-cell div3" variants={itemVariants}>
-            <h3>Tecnologías Principales</h3>
+            <h3>{t('hero.technologies')}</h3>
             <div className="tech-list">
               {userData.technologies.map((tech, index) => (
                 <span key={index} className="tech-tag">{tech}</span>
@@ -66,13 +69,13 @@ const Hero = () => {
 
           {/* Div4: Fun Fact */}
           <motion.div className="bento-cell div4" variants={itemVariants}>
-            <h3>Dato Curioso</h3>
+            <h3>{t('hero.funFactTitle')}</h3>
             <p>{userData.funFact}</p>
           </motion.div>
 
           {/* Div5: Bio */}
           <motion.div className="bento-cell div5" variants={itemVariants}>
-            <h3>Sobre Mí</h3>
+            <h3>{t('hero.aboutMe')}</h3>
             <p>{userData.bio}</p>
           </motion.div>
 
@@ -84,7 +87,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Descargar CV
+              {t('hero.downloadCV')}
             </motion.a>
           </motion.div>
 

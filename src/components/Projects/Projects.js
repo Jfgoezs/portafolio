@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Projects.css';
 import app3 from '../../assets/img/app3.png';
 
 const Projects = () => {
-  // Datos de ejemplo - reemplaza con tus proyectos
+  const { t } = useTranslation();
+  
   const projects = [
     {
       id: 1,
@@ -13,7 +15,7 @@ const Projects = () => {
       stack: ["React", "Node.js", "MongoDB", "Stripe"],
       projectLink: "https://tu-proyecto.vercel.app",
       codeLink: "https://github.com/tuusuario/tu-proyecto",
-      image: "https://via.placeholder.com/400x250" // Reemplaza con imagen real
+      image: "https://via.placeholder.com/400x250"
     },
     {
       id: 2,
@@ -66,7 +68,7 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Proyectos
+          {t('projects.title')}
         </motion.h2>
 
         <motion.div
@@ -88,10 +90,10 @@ const Projects = () => {
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
-                      Ver Proyecto
+                      {t('projects.viewProject')}
                     </a>
                     <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                      Ver Código
+                      {t('projects.viewCode')}
                     </a>
                   </div>
                 </div>

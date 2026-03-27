@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Contact.css';
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
   const contactLinks = [
     {
       name: "LinkedIn",
@@ -16,7 +19,7 @@ const Contact = () => {
     },
     {
       name: "Email",
-      url: "john_goez82192@elpoli.edu.co",
+      url: "jfgoezs@gmail.com",
       icon: "✉️"
     }
   ];
@@ -52,7 +55,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Contacto
+          {t('contact.title')}
         </motion.h2>
         
         <motion.div 
@@ -66,7 +69,7 @@ const Contact = () => {
             className="contact-text"
             variants={itemVariants}
           >
-            ¿Tienes un proyecto en mente? ¡Hablemos!
+            {t('contact.description')}
           </motion.p>
           
           <motion.div 
@@ -102,7 +105,7 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <p>Hecho con ❤️ usando React y Framer Motion</p>
+          <p>{t('contact.footer')}</p>
         </motion.footer>
       </div>
     </section>

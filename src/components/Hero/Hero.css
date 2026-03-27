@@ -61,7 +61,7 @@
 .div2 h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  color: var(--heading-color);
 }
 
 .div2 h2 {

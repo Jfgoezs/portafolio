@@ -1,5 +1,5 @@
 .projects {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
 }
 
 .projects-grid {
@@ -78,7 +78,7 @@
 .project-content h3 {
   font-size: 1.5rem;
   margin-bottom: 12px;
-  color: var(--text-primary);
+  color: var(--heading-color);
 }
 
 .project-content p {

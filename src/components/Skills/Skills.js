@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Skills.css';
 
 const Skills = () => {
-  // Datos de ejemplo - reemplaza con tus habilidades
+  const { t } = useTranslation();
+  
   const skills = [
     { name: "React", icon: "⚛️" },
     { name: "JavaScript", icon: "📜" },
@@ -50,7 +52,7 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Tecnologías
+          {t('skills.title')}
         </motion.h2>
         
         <motion.div 

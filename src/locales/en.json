@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "name": "Felipe Goez",
+    "role": "Frontend Developer",
+    "bio": "I'm a junior developer experienced in creating modern and scalable applications using React on the frontend and Node.js on the backend. I'm passionate about transforming ideas into functional products, with intuitive interfaces and solid architectures. I enjoy solving complex problems and learning new technologies that enhance the user experience.",
+    "funFact": "My favorite manwha is Eleceed. I really like how the strongest person in that world lives his life as a cat when he's not fighting",
+    "technologies": "Main Technologies",
+    "aboutMe": "About Me",
+    "funFactTitle": "Fun Fact",
+    "downloadCV": "Download CV"
+  },
+  "skills": {
+    "title": "Technologies"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind? Let's talk!",
+    "footer": "Made with ❤️ using React and Framer Motion"
+  }
+}
