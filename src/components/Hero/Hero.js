@@ -3,19 +3,35 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './Hero.css';
 import miFoto from '../../assets/img/yo.jpg';
-import cv from '../../assets/CvFelipeGoez.pdf';
+import cvEs from '../../assets/CvFelipeGoez-Español.pdf';
+import cvEn from '../../assets/CvFelipeGoez.pdf';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  
+  // Seleccionar el CV según el idioma actual
+  const currentCV = i18n.language === 'es' ? cvEs : cvEn;
   
   const userData = {
     name: t('hero.name'),
     role: t('hero.role'),
     bio: t('hero.bio'),
     funFact: t('hero.funFact'),
-    technologies: ["React", "JavaScript", "CSS", "Node.js", "Next.js", "Tailwind CSS", "Git", "Figma", "SQL", "MongoDB", "Express.js", "Python", "Django"],
+    background: t('hero.background'),
+    experiences: [
+      {
+        company: "Instituto Tecnológico Metropolitano (ITM)",
+        role: "Desarrollador Frontend",
+        period: "Mar. 2025 - Actualidad"
+      },
+      {
+        company: "Gobernación de Antioquia",
+        role: "Desarrollador Django",
+        period: "Jul. 2024 - Dic. 2024"
+      }
+    ],
     avatar: miFoto,
-    cvLink: cv
+    cvLink: currentCV
   };
 
   const containerVariants = {
@@ -57,12 +73,16 @@ const Hero = () => {
             <h2>{userData.role}</h2>
           </motion.div>
 
-          {/* Div3: Tecnologías */}
+          {/* Div3: Experiencia Profesional */}
           <motion.div className="bento-cell div3" variants={itemVariants}>
-            <h3>{t('hero.technologies')}</h3>
-            <div className="tech-list">
-              {userData.technologies.map((tech, index) => (
-                <span key={index} className="tech-tag">{tech}</span>
+            <h3>{userData.background}</h3>
+            <div className="experience-list">
+              {userData.experiences.map((exp, index) => (
+                <div key={index} className="experience-item">
+                  <h4>{exp.company}</h4>
+                  <p>{exp.role}</p>
+                  <small>{exp.period}</small>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -86,6 +106,7 @@ const Hero = () => {
               className="cta-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              download
             >
               {t('hero.downloadCV')}
             </motion.a>
