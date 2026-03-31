@@ -32,7 +32,7 @@ const Projects = () => {
       title: "Finanzas Mini",
       description: "Dashboard completo de finanzas personales con CRUD de transacciones, gráficos interactivos y análisis de gastos. Control total de ingresos y egresos con interfaz moderna.",
       stack: ["Next.js 14", "PostgreSQL", "Tailwind CSS", "Prisma", "Chart.js", "Framer Motion", "Ant Design"],
-      projectLink: "https://finanzas-i5ji.vercel.app/", 
+      projectLink: "https://finanzas-mini.jfgoezs.online/", 
       codeLink: "https://github.com/Jfgoezs/finanzas",
       image: app3
     }
