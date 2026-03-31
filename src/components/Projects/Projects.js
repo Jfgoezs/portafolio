@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './Projects.css';
 import app3 from '../../assets/img/app3.png';
+import app2 from '../../assets/img/app2.png'
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -13,18 +14,18 @@ const Projects = () => {
       title: "E-commerce React",
       description: "Una tienda online completa con carrito de compras, autenticación y pasarela de pagos.",
       stack: ["React", "Node.js", "MongoDB", "Stripe"],
-      projectLink: "https://tu-proyecto.vercel.app",
-      codeLink: "https://github.com/tuusuario/tu-proyecto",
+      projectLink: "https://syncro.jfgoezs.online/",
+      codeLink: "https://github.com/Jfgoezs/syncro",
       image: "https://via.placeholder.com/400x250"
     },
     {
       id: 2,
-      title: "App de Tareas",
-      description: "Aplicación para gestionar tareas con drag & drop, categorías y recordatorios.",
-      stack: ["React", "Firebase", "CSS Modules"],
-      projectLink: "https://tu-proyecto.vercel.app",
-      codeLink: "https://github.com/tuusuario/tu-proyecto",
-      image: "https://via.placeholder.com/400x250"
+      title: "Syncro",
+      description: "Aplicación para gestionar mi día",
+      stack: ["Next.js", "React", "Prisma", "PostgreSQL (Neon)", "Ant Design", "Framer Motion", "Three.js", "Day.js", "Canvas Confetti"],
+      projectLink: "https://syncro.jfgoezs.online/",
+      codeLink: "https://github.com/Jfgoezs/syncro",
+      image: app2
     },
     {
       id: 3,

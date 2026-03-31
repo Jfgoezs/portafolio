@@ -8,10 +8,10 @@ import cvEn from '../../assets/CvFelipeGoez.pdf';
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
-  
+
   // Seleccionar el CV según el idioma actual
   const currentCV = i18n.language === 'es' ? cvEs : cvEn;
-  
+
   const userData = {
     name: t('hero.name'),
     role: t('hero.role'),
@@ -56,7 +56,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero section">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="bento-grid"
           variants={containerVariants}
           initial="hidden"
@@ -78,11 +78,14 @@ const Hero = () => {
             <h3>{userData.background}</h3>
             <div className="experience-list">
               {userData.experiences.map((exp, index) => (
-                <div key={index} className="experience-item">
-                  <h4>{exp.company}</h4>
-                  <p>{exp.role}</p>
-                  <small>{exp.period}</small>
-                </div>
+                <React.Fragment key={index}>
+                  <div className="experience-item">
+                    <h4>{exp.company}</h4>
+                    <p>{exp.role}</p>
+                    <small>{exp.period}</small>
+                  </div>
+                  {index < userData.experiences.length - 1 && <br />}
+                </React.Fragment>
               ))}
             </div>
           </motion.div>
@@ -101,8 +104,8 @@ const Hero = () => {
 
           {/* Div6: CV */}
           <motion.div className="bento-cell div6" variants={itemVariants}>
-            <motion.a 
-              href={userData.cvLink} 
+            <motion.a
+              href={userData.cvLink}
               className="cta-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -118,4 +121,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero;  
