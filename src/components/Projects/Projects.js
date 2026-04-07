@@ -11,12 +11,12 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce React",
-      description: "Una tienda online completa con carrito de compras, autenticación y pasarela de pagos.",
+      title: "Parceras",
+      description: "Aplicación para psicologos. (En proceso de despliegue)",
       stack: ["React", "Node.js", "MongoDB", "Stripe"],
-      projectLink: "https://syncro.jfgoezs.online/",
-      codeLink: "https://github.com/Jfgoezs/syncro",
-      image: "https://via.placeholder.com/400x250"
+      projectLink: "",
+      codeLink: "",
+      image: ""
     },
     {
       id: 2,
